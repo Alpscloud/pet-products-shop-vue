@@ -1,0 +1,66 @@
+.pagination
+	margin-top 20px
+	&-list
+		display flex
+		flex-wrap nowrap
+		align-items center
+		justify-content center
+		gap 8px
+		&__link
+			display inline-flex
+			flex-wrap nowrap
+			align-items center
+			justify-content center
+			text-align center
+			height 48px
+			width 48px
+			border-radius 7px
+			border 2px solid $light-gray
+			background-color $light-gray
+			font 16px $Bold
+			color $dark-text-color
+			svg
+				display block
+				width 16px
+				height auto
+				fill currentColor
+				transition fill .17s ease-in-out
+			&-prev
+				svg
+					transform scaleX(-1)
+
+			&-prev,
+			&-next
+				width 56px
+			
+			
+			&.is-active
+				background-color transparent
+				border-color $accent-color
+				color $accent-color
+
+a.pagination-list__link:hover
+	background-color $accent-color
+	border-color $accent-color
+	color white
+	
+
++max-screen(700px)
+	.pagination-list__link
+		height 36px
+		width 36px
+		svg
+			width 12px
+		&-prev,
+		&-next
+			width 44px
+
+
+
++max-screen(400px)
+	.pagination-list__link
+		font-size 12px
+		&-prev,
+		&-next
+			width 36px
+	

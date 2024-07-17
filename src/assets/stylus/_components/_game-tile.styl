@@ -1,0 +1,290 @@
+.games-grid
+	position relative
+	z-index 4
+	
+
+	&-item
+		padding-bottom 10px
+		&:last-child
+			padding-bottom 0
+		
+.games-grid-wrapper
+	padding-bottom 40px
+
+.tile
+	border-radius 10px
+	transition all .17s ease-in-out
+	z-index 1
+
+.label-new
+	display inline-block
+	width 46px
+	height 26px
+	position absolute
+	top -2px
+	left -4px
+	z-index 5
+	pointer-events none
+	background url('../img/label-new.svg') 50% no-repeat / contain
+
+
+
+.game-tile
+	position absolute
+	display block
+	width 100%
+	height 100%
+	top 0
+	left 0
+	transition all .17s ease-in-out
+	border-radius 10px
+	
+	.btn-favorite
+		position absolute
+		z-index 5
+		top 5px
+		right 5px
+		opacity 0
+		visibility hidden
+		pointer-events none
+		
+	&:hover
+		video
+			display block !important
+		.game-tile__title
+			transform translateY(0)
+
+		.btn-favorite
+			opacity 1
+			visibility visible
+			pointer-events auto
+
+	&-media
+		position relative
+		width 100%
+		flex 1
+		border-radius 10px
+		justify-content center
+		background-repeat no-repeat
+		background-size cover
+		background-position 50%
+		overflow hidden
+
+
+	&-content
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		display flex
+		flex-wrap nowrap
+		flex-direction column
+
+	video
+		display none
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		object-fit cover
+		z-index 1
+		border-radius inherit
+
+	&__title
+		transition all .2s ease-in-out
+		border-radius 10px
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		background transparent
+		border none
+		z-index 3
+		display flex
+		flex-direction column
+		justify-content flex-end
+		align-items flex-start
+		padding 8px
+		color white
+			
+
+		&-text
+			font 15px $Bold
+			display none
+			width 100%
+			text-align center
+
+
+.game-tile
+	&.is-anim-lighting
+		z-index 3
+		.game-tile__lighting
+			animation lighting 6s linear 6s infinite normal none running 
+	&.is-anim-shake
+		z-index 3
+		animation shake 5s infinite ease-in
+	&.is-anim-pulse
+		z-index 3
+		animation pulse 3s infinite
+
+
+.game-tile:hover
+	z-index 6
+	animation none
+	.game-tile__title
+		&-text
+			display block
+
+	.game-tile-media
+		box-shadow none
+
+	.game-tile__lighting
+		animation none
+
+
+.game-tile__lighting
+	display block
+	width 200%
+	height 200%
+	top 0
+	left 0
+	position absolute
+	transform translate3d(-50%, 0%, 0px)
+	pointer-events none
+	opacity 0
+	z-index 3
+	rect
+		fill url(#lgrad)
+		width 100%
+		height 100%
+
+.game-tile-svg-gradient
+	stop
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(4)
+			stop-color white
+			stop-opacity 0
+		
+		&:nth-child(3)
+			stop-color white
+			stop-opacity 1
+
+		&:nth-child(5)
+			stop-color rgb(238, 130, 238)
+			stop-opacity 0
+
+
+@keyframes pulse 
+	0%, 80% 
+		transform scale(1)
+
+	85% 
+		transform scale(1.1)
+
+	90% 
+		transform scale(1)
+
+	95% 
+		transform scale(1.1)
+
+	100% 
+		transform scale(1)
+
+@keyframes shake 
+	0% 
+		transform translateX(0)
+	1% 
+		transform translateX(-3px)
+	2% 
+		transform translateX(5px)
+	3% 
+		transform translateX(-8px)
+	4% 
+		transform translateX(8px)
+	5% 
+		transform translateX(-5px)
+	6% 
+		transform translateX(3px)
+	7% 
+		transform translateX(0)
+
+
+@keyframes lighting
+	0% 
+		transform translate3d(-55%, -5%, 0px)
+		opacity 0
+
+
+	1% 
+		transform translate3d(-50%, 0%, 0px)
+		opacity 1
+
+
+	10% 
+		transform translate3d(0%, -50%, 0px)
+		opacity 1
+
+	15% 
+		transform translate3d(0%, -50%, 0px)
+		opacity 0
+
+	39.99% 
+		transform translate3d(-55%, -5%, 0px)
+		opacity 0
+
+	40% 
+		transform translate3d(-50%, 0%, 0px)
+		opacity 1
+
+	50% 
+		transform translate3d(0%, -50%, 0px)
+		opacity 1
+
+	66% 
+		transform translate3d(0%, -50%, 0px)
+		opacity 0
+
+	100% 
+		transform translate3d(0%, -50%, 0px)
+		opacity 0
+
+
+.game-tile:hover
+	video
+		display block
+	.game-tile__title
+		background rgba(0, 0, 0, 0.60)
+		background linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%)
+
+
+.is-medium,
+.is-small
+	.btn-favorite
+		top 6px
+		right 6px
+
+.game-tile
+	position relative
+
+.is-small
+	width 90px
+	height 90px
+	.btn-favorite
+		width 20px
+		height 20px
+		svg
+			width 14px
+			height 14px
+
+	.game-tile__title-text
+		font-size 13px
+		text-transform none
+
+	.btn-favorite
+		top 4px
+		right 4px
+

@@ -1,0 +1,445 @@
+.game
+	&-demo
+		flex 1
+		&-information
+			padding 14px
+			display flex
+			align-items center
+			justify-content space-between
+			flex-wrap nowrap
+			&__content
+				display flex
+				align-items center
+				flex-wrap nowrap
+				
+			&__thumbnail
+				display block
+				flex none
+				margin-right 16px
+				width 54px
+				height 54px
+				border-radius 10px
+				object-fit cover
+
+		&-play
+			display flex
+			flex-direction column
+			position relative
+			transition all .23s ease-in-out
+			background-color $body-bg
+			margin-bottom 16px
+			border-radius 10px
+			border 1px solid $border-color
+			
+
+			&.is-fullscreen
+				box-shadow none
+				border-radius 0
+				.game-demo-play
+					&__canvas
+						border-radius 0
+					&__controls
+						border-radius 0
+
+				.btn-control-fullscreen
+					&__on
+						display none
+					&__off
+						display block
+					
+					.btn-control-text:before
+						content attr(data-text)
+						margin-right 4px
+
+			&__canvas
+				position relative
+				overflow hidden
+				aspect-ratio 1195/777
+				background #e3e3e3
+				iframe
+					box-sizing border-box
+					display block
+					width 100%
+					height 100%
+					border-radius inherit
+
+			&__preview
+				position absolute
+				top 0
+				left 0
+				width 100%
+				height 100%
+				display flex
+				flex-direction column
+				align-items center
+				justify-content center
+				padding 20px
+				z-index 2
+				background-repeat no-repeat
+				background-size cover
+				background-position 50%
+				
+				&:before
+					pseudo()
+					position absolute
+					top 0
+					left 0
+					width 100%
+					height 100%
+					background rgba(0, 0, 0, 0.60)
+					backdrop-filter blur(70px)
+				&.is-hidden
+					display none
+				div
+					position relative
+					z-index 2
+					font 26px $Black
+					text-align left
+					color white
+
+				img
+					display block
+					width 128px
+					height 128px
+					margin-right 37px
+					border-radius 15px
+					flex none
+
+.game-demo-play__controls
+	display flex
+	align-items center
+	flex-wrap nowrap
+	justify-content space-between
+	padding 12px 14px
+
+.game-share
+	margin-bottom 30px
+	img
+		display block
+
+.game-tags
+	margin-bottom 20px
+
+.block-title-game
+	font-size 34px
+	line-height 1
+	margin-bottom 20px
+
+.game-developer
+	margin-bottom 12px
+	color #454B5E
+	font-size 17px
+	b, strong, span
+		font-family $Bold
+		color #000
+
+.game
+	.tags
+		margin-bottom 20px
+
+	
+.game-text-content 
+	.content
+		font-size 16px
+		h2
+			font-size 22px
+			margin-bottom 8px
+		p
+			margin-bottom 
+			
+		p + h2,
+		p + h3,
+		ul + h2,
+		ol + h3
+			margin-top 0
+
+.game-rate
+	&-btns
+		flex none
+		display flex
+		flex-wrap nowrap
+
+		&-divider
+			display block
+			flex none
+			width 1px
+			background-color rgba(148, 148, 148, 0.25)
+
+	&-btn
+		width auto
+		height 40px
+		gap 8px
+		display inline-flex
+		align-items center
+		flex-wrap nowrap
+		flex none
+		font 15px $Bold
+		color $secondary-color
+		position relative
+		backface-visibility hidden
+		padding 6px 12px
+		background-color $light-gray
+		color $dark-text-color
+		&:hover
+			background-color $accent-color
+			color #fff
+			.game-rate-btn__stroke
+				fill #fff
+		svg
+			display block
+			width 28px
+			height 28px
+			flex none
+		&__stroke
+			fill $dark-text-color
+		&__fill
+			fill none
+			
+		&__like
+			border-radius 7px 0 0 7px
+			&.is-active
+				.game-rate-btn__stroke,
+				.game-rate-btn__fill
+					fill $accent-color
+				&:hover
+					.game-rate-btn__stroke,
+					.game-rate-btn__fill
+						fill #fff
+				
+
+		&__dislike
+			border-radius 0 7px 7px 0
+			&.is-active
+				.game-rate-btn__stroke,
+				.game-rate-btn__fill
+					fill $dark-text-color
+				&:hover
+					.game-rate-btn__stroke,
+					.game-rate-btn__fill
+						fill #fff
+
+
+
+
+.game-demo-play__controls-btns
+	display flex
+	flex-wrap nowrap
+	gap 4px
+
+
+.game-content
+	&-wrapper
+		margin-bottom 45px
+
+	&-text
+	
+		h2, h3, h4
+			font 20px $Black
+			margin-bottom 18px
+
+	p + h2
+		margin-top 30px
+
+	.game-rating
+		margin-bottom 25px
+
+
+.game-information
+	margin-bottom 30px
+	color $dark-color
+	transition color .23s ease-in-out
+	b, strong
+		color black
+		font-family $SBold
+		transition color .23s ease-in-out
+	
+	li, p
+		margin-bottom 12px
+		&:last-child
+			margin-bottom 0
+
+.game-title
+	font 20px $ExBold
+	color $dark-text-color
+	transition color .23s ease-in-out
+	line-height 1
+	margin-bottom 4px
+
+.game-demo-play
+	.game-rating-value
+		font-size 20px
+		svg
+			width 20px
+			height 20px
+	
+	.game-rating-feedbacks
+		font-size 15px
+		padding-left 6px
+		margin-left 6px
+
+
++max-screen(1100px)
+	.game-demo
+		flex none
+		width 100%
+
++max-screen(992px)
+	.game-demo-play__canvas
+		aspect-ratio 700/600
+
+	.block-title-game
+		font-size 28px
+
+	.game-developer
+		font-size 16px
+
++max-screen(620px)
+	.game-demo-play
+		width calc(100% + 40px)
+		margin-left -20px
+		margin-right -20px
+		border-radius 0
+		border-top none
+		margin-bottom 12px
+		&__canvas
+			aspect-ratio 430 / 615
+			border-radius 0
+		
+	.page-game
+		padding-top 0
+
+	.game-demo-information
+		padding 15px
+
+	.game-demo-information__thumbnail
+		display none
+
+	.game-rate-btn
+		width 52px
+		&__counter
+			display none
+
+	.game-demo-play__controls
+		padding 12px 14px
+
+	.game-text-content 
+		padding 30px 15px
+		.content
+			font-size 14px
+			*:last-child
+				margin-bottom 0
+			h2,h3
+				font-size 18px
+
+			p
+				margin-bottom 16px
+
+	.block-title-game
+		font-size 24px
+		margin-bottom 20px
+		line-height 1
+
+	.game-developer
+		font-size 15px
+
+	.game-chat,
+	.games-similar
+		padding-top 45px
+
+	.btn-control-chat,
+	.btn-control-share,
+	.btn-control-fullscreen
+		.btn-control-text
+			display none
+
++max-screen(429px)
+	.game-demo-play
+		width calc(100% + 30px)
+		margin-left -15px
+		margin-right -15px
+	
+// Games similar
+.games-similar
+	padding-top 30px
+	.game-card__wrapper
+		width calc(100% / 8) !important
+
++max-screen(1920px)
+	.games-similar
+		.game-card__wrapper
+			width calc(100% / 6) !important
+
++max-screen(1460px)
+	.games-similar
+		.game-card__wrapper
+			width 20% !important
+
+
++max-screen(992px)
+	.games-similar
+		.game-card__wrapper
+			width 25% !important
+
++max-screen(620px)
+	.games-similar
+		.game-card__wrapper
+			width 33.33333% !important
+
+		.permalink
+			display none
+
++max-scren(429px)
+	.games-similar
+		.game-card__wrapper
+			width 50% !important
+
+// ============ Games similar
+
+// ASide
+.game-aside
+	
+	&-tiles
+		display flex
+		flex-wrap wrap
+		justify-content flex-start
+		gap 8px
+
+	&-right
+		width 296px
+		margin-left 35px
+	&-left
+		width 188px
+		margin-right 35px
+
++max-screen(1700px)
+	.game-aside-left
+		display none
+
++max-screen(1650px)
+	.game-aside-right
+		margin-left 30px
+
++max-screen(1365px)
+	.game-aside
+		width 188px
+
+
++max-screen(1200px)
+	.game-aside
+		display none
+
+	.game-demo
+		width 100%
+		flex none
+
+
+// Chat
+.game-chat
+	padding-top 30px
+	.block-title
+		padding 8px 0
+		margin-bottom 8px
+		display inline-flex
+		align-items center
+		flex-wrap nowrap
+		gap 16px

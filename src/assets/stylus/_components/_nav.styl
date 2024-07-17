@@ -1,0 +1,381 @@
+
+
+.page-menu
+	width 88px
+	transition all .23s ease-in-out
+	position relative
+	white-space nowrap
+	padding-right 8px
+	&.is-fixed
+		.menu-inner-content
+			height 100vh
+			overflow-y auto
+			margin-right -20px
+			padding-bottom 40px
+
+	.link-with-ic__text,
+	.menu-bottom
+		display none
+
+	
+
+	&.is-active
+		width 304px
+		padding-right 16px
+
+		.menu-inner-content
+			margin-right 0
+
+		.menu-bottom
+			display block
+
+		.menu-nav-top
+			&:before
+				width auto
+				right 10px
+
+		.link-with-ic__text
+			display block
+
+.menu-center
+	position relative
+
+
+.menu-content 
+	position absolute
+	top 0
+	left 0	
+	width 88px
+	height 100vh
+	background-color $body-bg
+	transition width .23s ease-in-out
+	display flex
+	flex-direction column
+	overflow hidden
+
+	
+.menu-bottom__nav
+	font-size 15px
+	a
+		color inherit
+
+.menu-inner
+	padding-top 8px
+	//padding-bottom 8px
+	position sticky
+	top 0
+	overflow hidden
+	white-space nowrap
+	&-content
+		scrollbar-width thin
+  	scrollbar-color #888 #f1f1f1
+	
+		&::-webkit-scrollbar 
+			width 2px
+		&::-webkit-scrollbar-track 
+			background #fff
+			border-radius 50px
+		&::-webkit-scrollbar-thumb
+			background-color rgba(0,0,0, .1)
+			border-radius 50px
+			border none
+
+.menu-links
+	color #889090
+	li
+		margin-bottom 14px
+		line-height normal
+		&:last-child
+			margin-bottom 0
+	a
+		color inherit
+		line-height normal
+		&:hover
+			text-decoration underline
+
+.copyright
+	margin-top 14px
+
+.menu-bottom
+	padding 28px 8px 0 20px
+	position relative
+	margin-top 8px
+	&:before
+		pseudo()
+		position absolute
+		top 0
+		left 10px
+		right 10px
+		height 1px
+		background-color rgba(69, 75, 94, 0.10)
+		display none
+
+
+.menu-btn
+	flex-col-center()
+	width 48px
+	position relative
+	flex none
+	svg
+		width 32px
+		height 32px
+		position absolute
+		position-center()
+	&__opener
+		position absolute
+		position-center()
+
+	
+	&__closer
+		width 54px
+		height 54px
+		margin-right 0
+		opacity 0
+		padding 3px
+		margin-right 16px
+
+.menu-heading
+	padding-right 0
+	background-color $body-bg
+	white-space nowrap
+	height 84px
+	position relative
+	border-bottom 1px solid $border-color
+	display none
+	align-items center
+	> div
+		width 100%
+	.logo
+		margin-right 0
+
+	&-btns
+		display none
+
+.menu-btn__toggler
+	width 40px
+	height 40px
+	margin-right 15px
+	svg
+		fill $dark-text-color
+		fill-rule evenodd 
+		clip-rule evenodd
+		width 28px
+		aspect-ratio 1/1
+
+
+li
+	.link-with-ic__all
+		opacity 0
+
+.link-with-ic
+	display flex
+	align-items center
+	flex-wrap nowrap
+	padding 8px 20px
+	font 18px $ExBold
+	color $dark-text-color
+	position relative
+	z-index 1
+	height 56px
+	isolation isolate
+	text-transform capitalize
+	transition none
+	position relative
+	&:before
+		pseudo()
+		position absolute
+		top 0
+		left 0
+		height 100%
+		width 3px
+		border-radius 0px 5px 5px 0px
+		background-color $accent-color
+		display none
+	img
+		display block
+
+	&__img
+		position relative
+		flex none
+		flex-col-center()
+		width 40px
+		height 40px
+		margin-right 0
+		img
+			@extends .content-img
+	
+		
+	&__counter
+		flex-col-center()
+		padding 0px 4px
+		border-radius 50px
+		height 18px
+		line-height 18px
+		min-width 18px
+		position absolute
+		font 10px $Bold
+		background-color $accent-color
+		color white
+		transition background-color .17s ease-in-out
+		top -4px
+		right -8px
+		z-index 1
+
+	&__text
+		display block
+		margin-left 12px
+
+	&:hover
+		img
+			filter brightness(0) saturate(100%) invert(19%) sepia(52%) saturate(6899%) hue-rotate(338deg) brightness(92%) contrast(102%) !important
+
+	&.is-active
+		color $accent-color
+		&:before
+			display block
+		img
+			filter brightness(0) saturate(100%) invert(19%) sepia(52%) saturate(6899%) hue-rotate(338deg) brightness(92%) contrast(102%) !important
+		
+	
+
+.menu-nav-top
+	position relative
+	padding-bottom 8px
+	margin-bottom 8px
+	&:before
+		pseudo()
+		position absolute
+		bottom 0
+		height 1px
+		left 10px
+		right auto
+		width 58px
+		background-color rgba(69, 75, 94, 0.10)
+	
+	
+
+.menu-inner
+	.link-with-ic
+		white-space nowrap
+
+.menu
+	.socials
+		margin-top 24px
+
++max-screen(1700px)
+
+	.page-menu.is-active 
+		.menu-content
+			width 264px
+
++max-screen(1200px)
+	.page-menu
+		transform translateX(-102%)
+		&.is-active
+			transform translateX(0)
+			.menu-content
+				width 88px
+			
+			.menu-bottom
+				display none
+
+			.link-with-ic
+				&__text
+					display none
+
++max-screen(1200px)
+	.page-menu
+		transform translateX(-102%)
+		will-change transform
+		transition transform .23s ease-in-out, background-color .17s ease-in-out
+		&.is-active
+			transform translateX(0)
+			width 88px
+			padding-right 0
+
++max-screen(992px)
+	.page-menu
+		z-index 22
+		width 268px
+		height calc(100vh + 30px)
+		height calc(100dvh + 30px)
+		transform translateX(-102%)
+		position fixed
+		top 0
+		left 0
+		background-color $body-bg
+		padding-right 0
+		display flex
+		flex-direction column
+		&.is-active
+			transform translateX(0)
+			width 268px
+
+			.menu-bottom
+				display block
+				&:before
+					display block
+
+
+		.link-with-ic__text
+			display block !important
+
+	.menu.is-active
+		padding-right 0
+
+	
+
+	.menu-inner
+		margin-right 0
+		padding-top 0
+		padding-bottom 50px
+		overflow-y auto
+		&-content
+			overflow hidden
+			margin 0
+
+	.menu-overflow
+		position fixed
+		top 0
+		left 0
+		width 100vw
+		height 100vh
+		background-color rgba(93, 93, 93, 0.60)
+		backdrop-filter blur(2px)
+		display none
+		z-index 20
+		&.is-active
+			display block
+
+	.menu-heading
+		display flex
+		padding-left 15px
+		padding-right 15px
+		height 56px
+		flex none
+		border-color transparent
+		> .row
+			justify-content space-between
+
+		&-btns
+			display flex
+			gap 5px
+
+			.btn-default
+				width 40px
+				height 40px
+				svg
+					width 26px
+					height 26px
+			
+			.btn-app
+				svg
+					width 23px
+					height 23px
+		
+
+	
+
++max-screen(620px)
+	.menu-inner
+		padding-bottom 90px

@@ -1,0 +1,116 @@
+.page-row
+	position relative
+
++max-screen(992px)
+	.page-row
+		width 100% !important
+		transition none
+		transform none !important
+
+
+// Sect content
+.text-content
+	padding 30px
+	border-radius 7px
+	border 1px solid $border-color
+
++max-screen(620px)
+	.text-content
+		padding-left 20px
+		padding-right 20px
+
++max-screen(374px)
+	.text-content
+		padding-left 15px
+		padding-right 15px
+		h1
+			font-size 20px
+
+// sect catalog
+.games-catalog-block
+	margin-bottom $gutter-bottom
+	&:last-child
+		margin-bottom 0
+	&__heading
+		padding 10px 0
+		gap 16px
+		margin-bottom 8px
+		.block-title
+			margin-bottom 0
+
+
+//============= catalog block
+
+.categories-cards
+	margin-left -6px
+	margin-right -6px
+	margin-bottom -12px
+
+.category-card
+	height 100%
+	display block
+	border-radius 7px
+	border 1px solid $border-color
+	overflow hidden
+	color $dark-text-color
+	font 16px $Bold
+	background-color $light-gray
+	position relative
+	outline 1px solid transparent
+	&__wrapper
+		width calc(100% / 6)
+		padding-left 6px
+		padding-right 6px
+		margin-bottom 12px
+	&__content
+		display flex
+		flex-wrap nowrap
+		align-items center
+		justify-content space-between
+		height 48px
+		padding 16px
+
+	&__counter
+		background-color white
+		border-radius 7px
+		text-align center
+		padding 2px 4px
+		color rgba($dark-text-color, .8)
+		font 12px $Reg
+		display inline-block
+		transition background-color .17s ease-in-out
+		
+	&__thumbnail
+		height 100px
+		position relative
+		overflow hidden
+		display block
+		img
+			display block
+			width 100%
+			height 100%
+			position absolute
+			position-center()
+			object-fit cover
+	&:hover
+		border-color $accent-color !important
+		background-color $accent-color !important
+		color white !important
+		outline-color $accent-color !important
+
+
+		.category-card__counter
+			color inherit !important
+			background-color rgba(255, 255, 255, 0.15) !important
+
++max-screen(1650px)
+	.category-card__wrapper
+		width 25%
+
++max-screen(992px)
+	.category-card__wrapper
+		width 50%
+
++max-screen(620px)
+	.category-card__wrapper
+		width 100%

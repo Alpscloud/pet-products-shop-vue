@@ -1,0 +1,124 @@
+.tags
+	ul
+		display flex
+		flex-wrap wrap
+		justify-content flex-start
+		gap 10px
+
+.tag
+	display inline-flex
+	flex-wrap nowrap
+	align-items center
+	justify-content center
+	height 42px
+	border-radius 7px
+	padding 10px 16px
+	background-color $light-gray
+	color #454B5E
+	font 17px $Med
+	cursor pointer
+	svg
+		flex none
+		display inline-block
+		width 16px
+		height 16px
+		fill currentColor
+		transition fill .17s ease-in-out
+		margin-right 8px
+
+	&:hover
+		background-color $accent-color
+		color $basic-white-color
+		svg
+			fill $basic-white-color
+
+
++max-screen(620px)
+	.tag
+		height 35px
+		font-size 14px
+		padding 8px 16px
+
+// ================= tag
+
+.socials
+	display flex
+	flex-wrap nowrap
+	height 32px
+	gap 4px
+	li
+		display inline-block
+	a
+		flex-col-center()
+		width 32px
+		height 32px
+		position relative
+		svg
+			display block
+			fill-rule evenodd 
+			clip-rule evenodd 
+			fill #454B5E
+			opacity .5
+			transition all .17s ease-in-out
+			width 20px
+			height 20px
+		&:hover
+			svg
+				fill $accent-color !important
+				opacity 1
+				transform scale(1.1)
+
+.permalink
+	display inline-flex
+	flex-wrap nowrap
+	align-items center
+	font 16px $Med
+	gap 4px
+	height 40px
+	padding 2px 8px
+	height 28px
+	border-radius 7px
+	color $accent-color
+	position relative
+	&:before
+		content 'View '
+	
+
+	&:hover
+		background-color $light-gray
+
+	&-wrapper
+		margin-top 20px
+		padding-bottom 20px
+
++max-screen(620px)
+	.permalink:before
+		display none
+
+.scroll-up
+	display inline-flex
+	align-items center
+	height 40px
+	border-radius 7px
+	font 16px $Med
+	color $dark-text-color
+	background-color $light-gray
+	gap 4px
+	padding 8px 8px 8px 16px
+	svg
+		fill none
+		width 24px
+		height 24px
+		stroke currentColor
+		stroke-width 2px 
+		stroke-linejoin round
+	&:hover
+		color $accent-color
+
++max-screen(767px)
+	.scroll-up
+		width 40px
+		padding 0
+		flex-col-center()
+		&-text
+			display none

@@ -1,0 +1,157 @@
+.nav-categories
+	position relative
+	overflow hidden
+	width 100%
+	&__wrapper
+		flex 1
+		min-width 0
+		margin-right 30px
+	
+	&__btn
+		display inline-block
+		position absolute
+		height 100%
+		width 100px
+		z-index 2
+		vertical-center()
+		background linear-gradient(271deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%)
+		transition all .17s ease-in-out
+		&.is-disabled
+			display none
+
+		svg
+			display block
+			position absolute
+			vertical-center()
+			right 2px
+			width 24px
+			height auto
+			fill none
+			stroke $dark-text-color
+			stroke-width 2px 
+			stroke-linecap round 
+			stroke-linejoin round
+			z-index 2
+		&-next
+			right 0
+		&-prev
+			transform translateY(-50%) scaleX(-1)
+			left 0
+	&__list
+		ul
+			transition all .4s ease-in-out
+			position relative
+			white-space nowrap
+			will-change transform 
+			backface-visibility hidden
+			transform translate3d(0,0,0)
+			left 0
+			//overflow hidden
+			li
+				display inline-block
+				margin-right 6px
+				vertical-align bottom
+
+			a
+				color $dark-text-color
+
+
+.page-content
+	.nav-categories__wrapper
+		width 100%
+		flex none
+		margin-bottom 16px
+
++max-screen(992px)
+	.header
+		.nav-categories__wrapper
+			display none
+
+// ====================
+
+// categories list
+.categories-list
+	ul
+		display flex
+		flex-wrap wrap
+		justify-content flex-start
+		margin-left -5px
+		margin-right -5px
+		margin-bottom -10px
+		li
+			width calc(100% / 8)
+			padding-left 5px
+			padding-right 5px
+			margin-bottom 10px
+
+	.link-with-ic
+		height 64px
+		padding 12px 10px
+		justify-content flex-start
+		font 16px $Bold
+		transition none
+		border none
+		background-color transparent !important
+		&__img
+			width 40px
+			height 40px
+			margin-right 8px
+
+		&__text
+			span
+				font-size 11px
+				transition none
+
+		&:hover
+			color $accent-color !important
+			span
+				color inherit
+			img
+				filter brightness(0) saturate(100%) invert(25%) sepia(53%) saturate(4899%) hue-rotate(241deg) brightness(97%) contrast(112%) !important
+
++max-screen(1649px)
+	.categories-list
+		ul
+			margin-left -5px
+			margin-right -5px
+			margin-bottom -8px
+			li
+				padding-left 4px
+				padding-right 4px
+				margin-bottom 8px
+		.link-with-ic
+			height 54px
+			font-size 14px
+			padding-left 10px
+			&__img
+				width 32px
+				height 32px
+
++max-screen(1365px)
+	.categories-list
+		ul
+			li
+				width 25%
+		.link-with-ic
+			height 64px
+			font-size 16px
+			&__img
+				width 40px
+				height 40px
+
++max-screen(992px)
+	.categories-list
+		.link-with-ic
+			height 54px
+			font-size 14px
+			padding-left 10px
+			padding-right 0
+			&__img
+				width 32px
+				height 32px
+
++max-screen(700px)
+	.categories-list
+		ul
+			li
+				width 50%

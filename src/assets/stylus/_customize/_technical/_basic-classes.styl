@@ -1,0 +1,204 @@
+
+.disable-hover,
+.disable-hover * 
+	pointer-events none !important
+
+.gutters
+	padding $gutters
+	
+.gutter
+	&-top
+		padding-top $gutter-top
+	&-bottom
+		padding-bottom $gutter-bottom
+	
+.w3c
+	visibility hidden
+	display none
+	
+.content__wrapper
+	width 100%
+	height 100%
+
+.block-title
+	color $dark-text-color
+	font 22px $ExBold
+	margin-bottom 24px
+	line-height normal
+	span
+		display block
+		font 14px $Reg
+		opacity .6
+		margin-top 8px
+		line-height 1
+		color black
+	b, strong
+		color $secondary-color
+
+	&-lg
+		font-size 26px
+
+
++max-screen(700px)
+	.block-title-lg
+		font-size 22px
+	
+.text-center
+	text-align center
+	
+.text-left
+	text-align left
+	
+.text-right
+	text-align right
+	
+.basic-white-color
+	color $basic-white-color
+
+.basic-black-color
+	color $basic-black-color
+
+	
+.content-img
+	display block
+	margin 0 auto
+	max-width 100%
+	max-height 100%
+	width auto
+	height auto
+	
+.bg
+	bg(50%, 50%)
+	
+
+	
+.visually-hidden
+	position absolute
+	clip rect(0 0 0 0)
+	width 1px
+	height 1px
+	margin -1px
+	z-index -999
+	opacity 0
+	visibility hidden
+	
+.thumbnail
+	position relative
+	overflow hidden
+	width 100%
+	padding-top 50%
+	img
+		display block
+		position absolute
+		position-center()
+		width 100%
+		height 100%
+		object-fit cover
+
+.page-content 
+	flex 1
+	transition all .23s ease-in-out
+	min-width 0
+	padding 14px 30px 100px 0px
+	min-height calc(100vh - 84px)
+	&--color-bg
+		background-color $light-bg
+		//transition background-color .17s ease-in-out
+
++max-screen(1200px)
+	.page-content 
+		padding-right 25px
+		padding-left 24px
+		width calc(100% + 88px)
+		margin-left -88px
+
++max-screen(992px)
+	.page-content
+		padding-bottom 70px
+		min-height calc(100vh - 72px)
+		padding-left 20px
+		padding-right 20px
+		margin-left 0
+		width 100%
+		flex none
+
++max-screen(620px)
+	.page-content
+		min-height calc(100vh - 120px)
+
++max-screen(374px)
+	.page-content
+		padding-left 15px
+		padding-right 15px
+		min-height auto
+	
+
+.content
+	line-height 1.5
+	*
+		&:last-child
+			margin-bottom 0
+			
+	h1,h2,h3,h3,h4,h5,h6
+		color $dark-text-color
+		font-family $Bold
+
+	h1
+		font-size 22px
+		font-family $ExBold
+		margin-bottom 24px
+
+	h2
+		font-size 20px
+		margin-bottom 16px
+
+	h3
+		font-size 18px
+		margin-bottom 16px
+
+	p, ul, ol
+		margin-bottom 24px
+		
+	strong, b
+		font-family $ExBold
+
+	a
+		color inherit
+		text-decoration underline
+		&:hover
+			text-decoration none
+
+	p + h2,
+	p + h3,
+	ul + h2,
+	ul + h3,
+	ol + h2,
+	ol + h3
+		margin-top 24px
+		
+	ul, ol
+		li
+			display block
+			position relative
+
+	p + ul,
+	p + ol,
+	h2 + ol,
+	h2 + ul,
+	h3 + ol,
+	h3 + ul
+		margin-top -24px
+
+				
+
+				
+	ol
+		counter-reset list
+		li
+			&:before
+				counter-increment list
+				content counter(list) ". "
+				display inline-block
+				margin-right 4px
+
+

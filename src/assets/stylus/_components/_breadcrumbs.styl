@@ -1,0 +1,48 @@
+.game-breadcrumbs
+	margin-bottom 24px
+	font 14px $Reg
+	&-list
+		display flex
+		flex-wrap wrap
+		&__link
+			display inline-flex
+			flex-wrap nowrap
+			align-items center
+			padding 0 8px
+			color #454B5E
+			line-height 1
+			position relative
+			&:after
+				pseudo()
+				width 1px
+				height 10px
+				background-color rgba(148, 148, 148, 0.25)
+				position absolute
+				vertical-center()
+				right 0
+			&:hover
+				color $accent-color
+
+			&-homepage
+				color $dark-text-color
+				padding-left 0
+			&-arrow
+				padding-right 16px
+				&:after
+					opacity 1
+					width 8px
+					height 8px
+					background url('../img/icons/svg/arrow.svg') 50% no-repeat / contain
+	
+
+	span.is-active
+		color $dark-text-color
+		opacity .4	
+		padding-left 8px
+
++max-screen(620px)
+	.game-breadcrumbs
+		margin-left -8px
+
+	.game-breadcrumbs-list__item:first-child
+		display none

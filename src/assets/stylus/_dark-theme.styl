@@ -1,0 +1,511 @@
+$dark-body-bg = #1F2220
+$dark-body-text-color = white
+$border-light-color = rgba(255, 255, 255, 0.15)
+$btn-light-hover-bg = rgba(255, 255, 255, 0.16)
+$light-color = white
+$darkmode-accent-color = #EC1040 
+$darkmode-secondary-color = #4AB424
+$darkmode-dark-accent-color = #017AD8
+
+@supports (scrollbar-width: auto)
+	body.is-dark
+		.menu-inner
+			scrollbar-color rgba($light-color, .15) rgba($light-color, .05)
+			scrollbar-width 4px
+			&::-webkit-scrollbar-thumb 
+				background rgba($light-color, .15)
+			
+			&::-webkit-scrollbar-track 
+				background rgba($light-color, .15)
+
+			&::-webkit-scrollbar 
+				max-width 4px
+				max-height 4px
+
+
+
+body
+	&.is-dark
+		background-color $dark-body-bg
+		color $dark-body-text-color
+
+		// Header
+		.header
+			border-color $border-light-color
+
+		.logo-text
+			filter brightness(0) saturate(100%) invert(91%) sepia(0%) saturate(3955%) hue-rotate(183deg) brightness(112%) contrast(99%)
+		// ========= header
+
+		// Btns
+		.btn:disabled,
+		.btn.is-disabled
+			background-color rgba($light-color, .15)
+			color rgba($light-color, .7)
+
+		
+		.btn-theme-toggler:hover
+			background-color rgba($basic-white-color, .1)
+
+		.btn-hamburger
+			background-image url('../img/icons/svg/close-light.svg')
+			span
+				background-color $light-color
+			svg
+				fill $light-color 
+
+		.btn-favorite
+			background-color #1F2220
+			box-shadow 0px 4px 7px rgba(0, 0, 0, 0.22)
+			svg
+				stroke #A5A7A6
+			&.is-active
+				svg
+					stroke $darkmode-accent-color
+					fill $darkmode-accent-color
+
+		.btn-default
+			color $light-color
+			&:hover
+				background-color rgba($light-color, .1)
+
+
+		// ============== btns
+
+		// Nav / menu
+		.nav-categories__btn
+			background linear-gradient(271deg, $dark-body-bg 0.56%, rgba(22, 31, 50, 0.00) 93.27%);
+			svg
+				stroke $light-color
+
+		.nav
+			a
+				color $light-color
+				&:hover
+					color $darkmode-accent-color
+
+		.menu-inner
+			&::-webkit-scrollbar-track 
+				background rgba($light-color, .1)
+			&::-webkit-scrollbar-thumb 
+				background-color rgba($light-color, .25)
+
+		
+
+		.menu-content
+			border-color $border-light-color
+			background-color $dark-body-bg
+
+		.menu-heading
+			background-color $dark-body-bg
+
+		.menu-bottom:before
+			background-color rgba($light-color, .15)
+
+		.menu-nav-top:before
+			background-color rgba($light-color, .15)
+
+
+		.link-with-ic
+			color $light-color
+			img
+				filter brightness(0) saturate(100%) invert(91%) sepia(0%) saturate(3955%) hue-rotate(183deg) brightness(112%) contrast(99%)
+			&:hover
+				color $darkmode-accent-color
+
+		.menu-links
+			color #E4E4E4
+
+		.menu-btn__toggler svg
+			fill $light-color
+
+		
+
+		// ===================== nav / menu
+
+		// Interface
+		.tag
+			background-color rgba($light-color, 0.1) !important
+			color $light-color
+			svg
+				fill $light-color
+			img
+				filter brightness(0) saturate(100%) invert(91%) sepia(0%) saturate(3955%) hue-rotate(183deg) brightness(112%) contrast(99%)
+
+
+			&:hover
+				background-color $darkmode-accent-color !important
+				border-color $darkmode-accent-color
+		
+		.permalink
+			color $darkmode-accent-color
+			&:hover
+				background-color rgba($light-color, 0.10)
+
+		.scroll-up
+			background-color rgba($light-color, 0.10)
+			color $light-color
+			&:hover
+				color $darkmode-accent-color
+		
+		
+
+		.socials
+			a
+				svg
+					fill $light-color
+
+		.pagination-list__link
+			color $light-color
+			border-color #353836
+			background-color #353836
+			svg
+				fill $light-color
+
+			&.is-active
+				background-color transparent
+				border-color $darkmode-accent-color
+				color $darkmode-accent-color
+
+
+
+		a.pagination-list__link:hover
+			border-color $darkmode-accent-color
+			background-color $darkmode-accent-color
+			color $light-color
+			svg
+				fill $light-color
+
+		
+		// ================ interface
+
+		// section content / ADvantages
+		.text-content
+			border-color rgba(216, 218, 220, 0.15)
+
+		.empty-block-img
+			&__stroke
+				stroke $light-color
+			&__figure
+				fill $light-color
+			&__fill
+				fill rgba($light-color, .1)
+
+		.block-title
+			color $light-color
+			span
+				color inherit
+			
+
+		.empty-block
+			color $light-color
+			h1
+				color $light-color
+			
+		.content
+			h1,h2,h3
+				color $light-color
+
+			ul li:before
+				background-color $light-color
+
+		.page-content-heading
+			color rgba($light-color, .7)
+			h1,h2
+				&:before
+					background-color rgba($light-color, .1)
+
+		.sect__text-category
+
+			.content-col
+				border-color rgba($light-color, .1)
+				background-color transparent
+
+
+		// ================ section content / Aadvantages
+			
+
+		// Form
+		input:-webkit-autofill,
+		input:-webkit-autofill:hover, 
+		input:-webkit-autofill:focus, 
+		input:-webkit-autofill:active
+			-webkit-box-shadow 0 0 0 30px $dark-body-bg inset !important
+			box-shadow 0 0 0 30px $dark-body-bg inset !important
+			-webkit-text-fill-color $light-color !important
+			text-fill-color $light-color !important
+
+
+		
+
+		.sorting-select__ic
+			svg
+				fill $light-color
+
+		.sorting-select:hover,
+		.sorting-select.is-active
+			background-color rgba($light-color, .15)
+
+			
+
+		.form-select__options 
+			background-color #353836
+			li
+				color $light-color
+				&:hover,
+				&.is-active
+					background-color $darkmode-secondary-color
+					color $light-color
+
+		.form-input
+			background-color rgba($light-color, .10)
+			border-color rgba($light-color, .10)
+			color $light-color
+
+		.form-label.is-active,
+		.form-label.is-valid
+			.form-input	
+				background-color rgba($light-color, .10) !important
+				border-color rgba($light-color, .10) !important
+				box-shadow none
+			
+		.form-label
+			
+			.form-input:focus
+				border-color $darkmode-secondary-color !important
+				background-color transparent !important
+				box-shadow inset 0 0 0 1px $darkmode-secondary-color
+				~ .form-label__text
+					color rgba($light-color, .5)
+
+		
+
+
+		.form-label__text
+			color rgba($light-color, .6)
+
+		.contacts-text
+			color $light-color
+
+		form
+			.form-select__options
+				background-color #353836
+
+		.success
+			background-color $dark-body-bg
+			color rgba($light-color, .5)
+			h3
+				color $light-color
+
+		.form-group__select
+			.form-label.is-active
+				.form-label__text
+					color rgba($light-color, .5)
+
+				.form-select__arrow
+					svg
+						fill $light-color
+
+		.form-select__arrow
+			svg
+				fill $light-color
+
+		.search-form
+			&__input
+				background-color rgba($light-color, .10)
+				border-color rgba($light-color, .15)
+				color $light-color
+				&::-webkit-input-placeholder
+					color $light-color
+				&::-moz-placeholder
+					color $light-color
+				&:-moz-placeholder
+					color $light-color
+				&:-ms-input-placeholder
+					color $light-color
+
+				&:focus,
+				&.is-active
+					background-color transparent !important
+					border-color $darkmode-secondary-color
+					box-shadow inset 0 0 0 1px $darkmode-secondary-color
+				
+
+			&__btn
+				svg
+					fill $light-color
+
+			&__ic
+				svg
+					fill $light-color
+		
+		.page-content-heading h1, .page-content-heading h2
+			color $light-color
+
+		// ============= form
+
+		.categories-tags
+			&:after
+				background linear-gradient(270deg, $dark-body-bg 70%, rgba(22, 31, 50, 0.00) 100%)
+
+		.tags-toggler
+			svg
+				fill none
+				stroke currentColor
+		// Game
+		.game-demo-play
+			background-color $dark-body-bg
+			border-color rgba($light-color, .15)
+
+		.game-title
+			color $light-color
+
+		.game-rate-feedbacks
+			color rgba($light-color, .6)
+			&__value
+				color $light-color
+
+		.game-rate-btn
+			background-color rgba($light-color, 0.10)
+			color $light-color
+			&-divider
+				background-color rgba($light-color, 0.15)
+			&__stroke
+				fill $light-color
+			&:hover
+				background-color $darkmode-accent-color
+			
+			&__dislike
+				&.is-active
+					.game-rate-btn__stroke,
+					.game-rate-btn__fill
+						fill $light-color
+
+		.game-chat
+			.block-title
+				img
+					filter brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(125deg) brightness(107%) contrast(103%)
+
+		.game-content
+			border-color rgba($light-color, .1)
+			background-color transparent
+
+		.btn-control
+			background-color rgba($light-color, .1)
+			color $light-color
+			&:hover
+				background-color $darkmode-accent-color
+			svg
+				fill $light-color
+			&-favorite
+				svg
+					stroke currentColor
+
+		.game-breadcrumbs
+			&-list
+				&__link
+					color #A7B7BF
+					&:hover
+						color $darkmode-accent-color
+					&:after
+						background-color rgba($light-color, .25)
+					&-homepage
+						color $light-color
+					&-arrow
+						&:after
+							background-image url('../img/icons/svg/arrow-light.svg')
+							background-color transparent
+			span.is-active
+				color rgba($light-color, .4)
+					
+
+		.game-information
+			color $light-color
+			b, strong
+				color $light-color
+
+		.game-developer
+			color #A7B7BF
+			b, strong, span
+				color $light-color
+		// ============ game
+
+		// Game cards
+		.category-card
+			color $light-color
+			background-color rgba($light-color, 0.10)
+			border-color rgba($light-color, 0.15)
+			&__counter
+				background-color rgba($light-color, 0.10)
+				color rgba($light-color, 0.8)
+
+		.game-card
+			color $light-color
+			&:hover
+				box-shadow 0px 4px 40px 0px rgba(0, 0, 0, 0.51)
+				border-color rgba(66, 72, 91, 0.40)
+				background-color #1F2220
+				.game-card__thumbnail
+					border-color transparent 
+			&__wrapper:hover
+				.game-card
+					box-shadow 0px 4px 40px 0px rgba(0, 0, 0, 0.51)
+					border-color rgba(66, 72, 91, 0.40)
+					background-color #1F2220
+
+
+
+		.game-rating-value
+			color $light-color
+		
+		.game-rating-feedbacks
+			color rgba($light-color, 0.5)
+			border-color rgba($light-color, 0.15)
+
+		.game-card__thumbnail
+			border-color #323637
+
+		// =========== game card
+
+		// 404
+		.empty-block-img
+			svg
+				fill #2B2641
+
+		.page-content--color-bg
+			background-color $dark-body-bg
+			
+
++max-screen(992px)
+	body.is-dark
+		.menu-inner
+			&::-webkit-scrollbar-track 
+				background rgba($light-color, .1)
+			&::-webkit-scrollbar-thumb 
+				background-color rgba($light-color, .25)
+
+		.menu
+			background-color $dark-body-bg
+
+		.search-form__input
+			&.is-active
+				+ .search-form__btn
+					svg
+						fill $darkmode-accent-color !important
+
++max-screen(700px)
+	body.is-dark
+		.game-content
+			border 1px solid rgba($light-color, .1)
+
++max-screen(620px)
+	body.is-dark
+		.sorting-select
+			background-color transparent
+			border-color transparent
+
+
+
+
+	
+ 

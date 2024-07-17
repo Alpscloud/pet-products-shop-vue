@@ -1,0 +1,254 @@
+
+
+@keyframes scrollTitle
+	from
+		transform translateX(100%)
+
+	to 
+		transform translateX(-100%)
+  
+
+
+.game-card
+	display block
+	height 100%
+	color $dark-text-color
+	font 15px $Bold
+	position relative
+	overflow hidden
+	border-radius 8px
+	border 1px solid transparent
+	&__thumbnail
+		display block
+		width 100%
+		padding-top 100%
+		border-radius 8px
+		transition all .17s ease-in-out
+		margin 0 auto
+		border 1px solid $border-color
+		video
+			position absolute
+			width 100%
+			height 100%
+			position-center()
+			display none
+			z-index 1
+			object-fit cover
+	&__content
+		padding 8px 8px 10px 8px
+		display block
+
+		
+
+	&__title
+		overflow hidden
+		text-overflow ellipsis
+		display block
+		white-space nowrap
+		line-height normal
+		margin-bottom 6px
+		position relative
+
+
+	&:hover
+		box-shadow 0px 4px 18px 0px rgba(0, 0, 0, 0.17)
+		border-color $border-color
+		.game-card__thumbnail
+			border-radius 8px 8px 0 0
+			border-color transparent
+		.game-card__title
+			span
+				display block
+				position relative
+
+		.btn-favorite
+			opacity 1
+
+		video
+			display block
+
+	
+
+	&__wrapper
+		position relative
+
+		.btn-favorite
+			position absolute
+			right 12px
+			top 6px
+			z-index 1
+			opacity 0
+
+		&:hover
+			
+			.game-card
+				box-shadow 0px 4px 18px 0px rgba(0, 0, 0, 0.17)
+				border-color $border-color
+			.game-card__thumbnail
+				border-radius 8px 8px 0 0
+				border-color transparent
+			.game-card__title
+				span
+					display block
+					position relative
+
+			.btn-favorite
+				opacity 1
+
+			video
+				display block
+
+		
+
+.game-rating
+	display flex
+	flex-wrap nowrap
+	align-items center
+	
+	&-value
+		display flex
+		flex-wrap nowrap
+		align-items center
+		gap 4px
+		color #454B5E
+		font 13px $ExBold
+		
+		svg
+			display block
+			fill-rule evenodd 
+			clip-rule evenodd
+			width 15px
+			height auto
+			flex none
+			fill #FB9700
+			top -1px
+			position relative
+	&-feedbacks
+		top 1px
+		position relative
+		border-left 1px solid rgba(#454B5E, .15)
+		color rgba(#454B5E, .5)
+		font 12px $Reg
+		padding-left 4px
+		margin-left 4px
+		line-height 1
+
+// GAmes cards
+.games-cards
+	margin-left -6px
+	margin-right -6px
+	margin-bottom -20px
+
+.game-card__wrapper
+	width 10%
+	padding-left 6px
+	padding-right 6px
+	margin-bottom 20px
+
++max-screen(1700px)
+	.games-cards
+		margin-left -4px
+		margin-right -4px
+		&:not(.games-cards-homepage)
+			.game-card__wrapper
+				width calc(100% / 8)
+	.game-card__wrapper
+		padding-left 4px
+		padding-right 4px
+		
+
+		.btn-favorite
+			right 9px
+
++max-screen(1650px)
+	.games-cards-homepage
+		.game-card__wrapper
+			width calc(100% / 8)
+			&:nth-last-child(30),
+			&:nth-last-child(29),
+			&:nth-last-child(28),
+			&:nth-last-child(27),
+			&:nth-last-child(26),
+			&:nth-last-child(25)
+				display none
+
++max-screen(1365px)
+	body.is-toggled
+		.games-cards-homepage
+			.game-card__wrapper
+				width calc(100% / 6)
+				&:nth-last-child(24),
+				&:nth-last-child(23),
+				&:nth-last-child(22),
+				&:nth-last-child(21),
+				&:nth-last-child(20),
+				&:nth-last-child(19)
+					display none
+
++max-screen(1200px)
+	.games-cards
+		&:not(.games-cards-homepage)
+			.game-card__wrapper
+				width calc(100% / 6)
+			
+	.games-cards-homepage
+		.game-card__wrapper
+			width calc(100% / 6)
+			&:nth-last-child(24),
+			&:nth-last-child(23),
+			&:nth-last-child(22),
+			&:nth-last-child(21),
+			&:nth-last-child(20),
+			&:nth-last-child(19)
+				display none
+
++max-screen(992px)
+	.games-cards
+		&:not(.games-cards-homepage)
+			.game-card__wrapper
+				width 25%
+
+	.games-cards-homepage
+		.game-card__wrapper
+			width 20%
+			&:nth-last-child(18),
+			&:nth-last-child(17),
+			&:nth-last-child(16)
+				display none
+
++max-screen(700px)
+	.games-cards
+		margin-bottom -14px
+	
+	.game-card__wrapper
+		margin-bottom 14px
+
+	.games-cards
+		&:not(.games-cards-homepage)
+			.game-card__wrapper
+				width 33.33333%
+
+	.games-cards-homepage
+		.game-card__wrapper
+			width 33.33333%
+			&:nth-last-child(15),
+			&:nth-last-child(14),
+			&:nth-last-child(13),
+			&:nth-last-child(12),
+			&:nth-last-child(11),
+			&:nth-last-child(10)
+				display none
+
++max-screen(429px)
+	.games-cards
+		&:not(.games-cards-homepage)
+			.game-card__wrapper
+				width 50%
+
+	.games-cards-homepage
+		.game-card__wrapper
+			width 50%
+			&:nth-last-child(9),
+			&:nth-last-child(8),
+			&:nth-last-child(7)
+				display none

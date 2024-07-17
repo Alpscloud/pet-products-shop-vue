@@ -1,0 +1,233 @@
+.page-catalog
+	.games-catalog-block__heading
+		padding 12px 0
+		margin-bottom 8px
+
+	.block-title
+		color $dark-text-color
+
++max-screen(992px)
+	.page-catalog
+		.games-catalog-block__heading
+			padding 4px 0
+			margin-bottom 10px
+
+.sorting
+	width 48px
+	height 48px
+	border-radius 12px
+	transition background-color .17s ease-in-out
+	position relative
+	z-index 3
+
+	&-select
+		width 100%
+		height 100%
+		padding 0
+		flex-col-center()
+		border-color transparent
+		border-radius inherit
+		&:hover
+			cursor pointer
+			background-color $light-gray
+		&__arrow,
+		&__result
+			display none
+		&__ic
+			flex-col-center()
+			flex none
+			svg
+				width 40px
+				height 40px
+				transition fill .17s ease-in-out
+				display block
+				fill $dark-text-color
+
+		.form-select__options
+			width 118px
+			left auto
+			right 0
+			padding-top 0
+			top 100%
+			margin-top 4px
+
+		.form-select__option
+			color $text-color
+			&:hover,
+			&.is-active
+				background-color rgba(55, 35, 17, 0.06)
+				color $text-color
+
+		&.is-active
+			background-color $light-gray
+			
+			.form-select__options
+				margin-top 4px
+
++max-screen(620px)
+	.sorting
+		width 40px
+		height 40px
+		border-radius 10px
+		svg
+			width 28px
+			height 28px
+
+.category-heading 
+	margin-bottom 18px
+	display flex
+	align-items center
+	gap 24px
+	.games-catalog-block__heading
+		margin-bottom 0
+		padding 0
+		flex 1
+
+	&-img
+		display block
+		width auto
+		height auto
+		max-width 266px
+		max-height 74px
+		border-radius 7px
+
++max-screen(767px)
+	.category-heading
+		margin-bottom 8px
+		min-height 112px
+		padding 18px 8px 18px 16px
+		z-index 6
+		position relative
+		&:before
+			pseudo()
+			position absolute
+			top 0
+			left 0
+			border-radius 7px
+			width 100%
+			height 100%
+			background linear-gradient(90deg, rgba(0, 0, 0, 0.60) 0%, rgba(102, 102, 102, 0.60) 100%)
+			backdrop-filter blur(2px)
+			z-index 1
+		&-img
+			max-width 100%
+			max-height 100%
+			width 100%
+			height 100%
+			object-fit cover
+			position absolute
+			top 0
+			left 0
+			z-index -1
+
+		.games-catalog-block__heading
+			margin-bottom 0
+			padding 0
+			position relative
+			z-index 2
+
+		.block-title
+			color $basic-white-color
+			span
+				color $basic-white-color
+
+		.sorting
+			&-select
+				&__ic
+					svg
+						fill $basic-white-color
+				&:hover,
+				&.is-active
+					svg
+						fill $dark-text-color
+
+		
+
+
+.categories-tags
+	margin-top 8px
+	position relative
+	overflow hidden
+	padding-right 95px
+	white-space nowrap
+	margin-bottom 24px
+	&:after
+		pseudo()
+		height 100%
+		width 170px
+		background linear-gradient(270deg, $body-bg 70%, rgba(255,255,255,0) 100%)
+		position absolute
+		right 0
+		top 0
+		z-index 1
+
+	ul
+		flex-wrap nowrap
+
+	&.is-active
+		padding-right 0
+		ul
+			flex-wrap wrap
+		&:after
+			display none
+
+		.tags-toggler
+			position relative
+			transform none
+			right auto
+			top auto
+			width 112px
+			&:before
+				content attr(data-active-text)
+			svg
+				transform rotate(-180deg)
+
+
+.tags-toggler
+	width 107px
+	position absolute
+	z-index 2
+	right 0
+	vertical-center()
+	background-color $light-gray
+	gap 8px
+	color $dark-text-color
+	transition none
+	svg
+		transition none
+		margin-right 0
+		fill none
+		stroke black
+		stroke-width 2px 
+		stroke-linecap round 
+		stroke-linejoin round
+	&:hover
+		svg
+			fill none
+			stroke white
+	&:before
+		content attr(data-default-text)
+
+
+
+
++max-screen(620px)
+	.tags-toggler
+		width 84px
+		gap 8px
+		svg
+			width 12px
+			height 12px
+			top 1px
+			position relative
+
+	.categories-tags
+		&:after
+			width 140px
+	
+
+
+
+
+
+

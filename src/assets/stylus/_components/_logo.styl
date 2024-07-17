@@ -1,0 +1,73 @@
+.logo
+	display inline-flex
+	align-items center
+	flex-wrap nowrap
+	position relative
+	overflow hidden
+	flex none
+	width 201px
+	height 48px
+	margin-right 15px
+	transition none
+	gap 4px
+	&-figure
+		width 110px
+		height 48px
+	&-text
+		width 83px
+		height 31px
+
++max-screen(1700px)
+	.header,
+	.menu
+		.logo
+			width 175px
+			height 41px
+			&-figure
+				height 41px
+				width auto
+			&-text
+				height 28px
+				width auto
+
++max-screen(1200px)
+	.header
+		.logo
+			&.is-hidden
+				opacity 1
+				visibility visible
+				pointer-events auto
+
++max-screen(992px)
+	.header
+		.logo
+			width 182px
+			height 51px
+			margin-right 14px
+
+	.menu
+		.logo
+			width 82px
+			height 36px
+			margin-right 0
+			flex-col-center()
+			margin-right 8px
+			&-text
+				display none
+			&-figure
+				height 36px
+				width auto
+
++max-screen(620px)
+	.header
+		.logo
+			width 82px
+			height 36px
+			margin-right 0
+			flex-col-center()
+			margin-right 8px
+			&-text
+				display none
+			&-figure
+				height 36px
+				width auto

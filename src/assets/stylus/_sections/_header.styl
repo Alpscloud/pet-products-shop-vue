@@ -1,0 +1,77 @@
+.header
+	padding 11px 30px 11px 20px//112
+	transition all .23s ease-in-out
+	height 84px
+	border-bottom 1px solid $border-color
+	display flex
+	align-items center
+
+	&__row
+		width 100%
+
++max-screen(1200px)
+	.header
+		padding-right 25px
+		padding-left 15px
+
++max-screen(992px)
+	.header
+		padding-left 13px
+		padding-right 13px
+
++max-screen(620px)
+	.header
+		padding 6px 20px 6px 10px
+		height 62px
+		padding-top 6px
+		padding-bottom 6px
+
++max-screen(374px)
+	.header
+		padding-right 15px
+		padding-left 7px
+
+.header-tools
+	flex none
+	gap 14px
+
++max-screen(620px)
+	.header-tools
+		display none
+
+.header-search
+	flex 1
+	width 100%
+	max-width 374px
+	margin-right 15px
+
++max-screen(1650px)
+	.header-search
+		max-width 340px
+
++max-screen(992px)
+	.header-search
+		max-width none
+
++max-screen(620px)
+	.header-search
+		margin-right 0
+
+
+.header-page-search
+	.header-search
+		max-width 670px
+
++max-screen(620px)
+	.header-page-search
+		.logo
+			opacity 0
+			visibility hidden
+
+		.header-search
+			margin-left -92px
+			position relative
+			z-index 1
+
+
+	
