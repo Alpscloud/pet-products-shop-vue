@@ -1,0 +1,20 @@
+<template>
+  <a href="index.html" class="logo">
+    <img
+      src="../../assets/img/logo-text.svg"
+      loading="lazy"
+      width="110"
+      height="34"
+      alt=""
+      class="logo-text"
+    />
+    <img
+      src="../../assets/img/logo.svg"
+      loading="lazy"
+      width="83"
+      height="48"
+      alt=""
+      class="logo-figure"
+    />
+  </a>
+</template>
