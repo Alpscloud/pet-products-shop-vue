@@ -10,6 +10,6 @@ const props = defineProps({
 <template>
 	<div class="games-catalog-block__heading row row-nowrap align-vertical-center align-horisontal-start">
     <h2 class="block-title">{{ props.title }}</h2>
-    <Permalink :href="props.permalinkHref" />
+    <Permalink :permalinkHref="props.permalinkHref" />
   </div>
 </template>

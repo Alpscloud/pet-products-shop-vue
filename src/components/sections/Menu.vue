@@ -6,14 +6,22 @@ import ToggleDarkThemeBtn from "../UI/buttons/ToggleDarkThemeBtn.vue";
 import GetBrowserExtensionBtn from "../UI/buttons/GetBrowserExtensionBtn.vue";
 import Logo from "../UI/Logo.vue";
 import LinkWithImg from "../UI/LinkWithImg.vue";
+import MenuCategoriesList from "../blocks/MenuCategoriesList.vue";
 
 import Nav from "../blocks/Nav.vue";
 import SocialsList from "../blocks/SocialsList.vue";
 
+const props = defineProps({
+  isMenuActive: Boolean
+});
+
 </script>
 
 <template>
-  <section class="page-menu menu js-menu">
+  <section 
+    class="page-menu menu js-menu"
+    :class="props.isMenuActive ? 'is-active': ''"
+  >
     <h2 class="w3c">Menu</h2>
 
     <div class="menu-heading">
@@ -51,16 +59,7 @@ import SocialsList from "../blocks/SocialsList.vue";
               />
             </div>
 
-            <ul>
-              <li>
-                <LinkWithImg
-                  href="/"
-                  title="Popular"
-                  imgSrc="../src/assets/img/menu/popular.svg"
-                />
-              </li>
-              <!-- //menu li -->
-            </ul>
+            <MenuCategoriesList />
           </nav>
         </div>
 

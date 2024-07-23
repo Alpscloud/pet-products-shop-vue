@@ -1,17 +1,11 @@
 <script setup>
 const props = defineProps({
 	permalinkHref: {
-		type: String,
-		required: true
-	},
-	title: {
-		type: String,
-		required: true,
-		default: 'More'
+		type: String
 	}
 });
 </script>
 
 <template>
-	<a :href="props.permalinkHref" class="permalink">{{ props.title }}</a>
+	<a v-if="props.permalinkHref" :href="props.permalinkHref" class="permalink">More</a>
 </template>

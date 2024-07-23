@@ -5,9 +5,9 @@ import {
 } from 'vue';
 
 import { API } from '@/config/api.js';
-import CategoryCard from './CategoryCard.vue';
+import LinkWithImg from "../UI/LinkWithImg.vue";
 
-let categoriesCards = ref([]);
+let categoriesItems = ref([]);
 
 const getCategories = async () => {
   let res = await fetch(API.getCategoriesURL, {
@@ -18,8 +18,7 @@ const getCategories = async () => {
 	});
   try {
     let categories = await res.json();
-    categories.sort((a, b) => b.gamesCount - a.gamesCount);
-    categoriesCards.value = categories;
+    categoriesItems.value = categories;
   } catch (error) {
     throw new Error(error.message);
   } finally {
@@ -30,15 +29,16 @@ const getCategories = async () => {
 onMounted(async () => {
   await getCategories();
 });
-
 </script>
 
 <template>
-  <div class="categories-cards row align-horisontal-start">
-   <CategoryCard 
-    v-for="(categoryCard, index) in categoriesCards" 
-    :key="Number(categoryCard.id)+Math.random()"
-    :categoryCard="categoryCard"
-   />
-  </div>
+  <ul>
+    <li 
+			v-for="(category, index) in categoriesItems"
+			:key="Number(category.id)+Math.random()"
+			>
+      <LinkWithImg :category="category"/>
+    </li>
+    <!-- //menu li -->
+  </ul>
 </template>
